@@ -3,6 +3,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
+import javafx.scene.control.Label;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 import java.util.List;
@@ -18,6 +19,8 @@ public class SceneController
     @FXML   private Button yesButton;
     @FXML   private Button noButton;
     @FXML   private Button exitButton;
+    @FXML   private Label label1;
+    @FXML   private Label label2;
     @FXML   private ListView listView;
 
     public SceneController()          // The constructor method, called first when the scene is loaded.
@@ -76,7 +79,7 @@ public class SceneController
     {
         System.out.println("Yes was clicked!");        
     }
-
+    
     @FXML   void noClicked()
     {
         System.out.println("No was clicked!");
@@ -101,6 +104,8 @@ public class SceneController
         else
         {
             System.out.println(selectedItem + " (id: " + selectedItem.id + ") is selected.");
+            
+            label2.setText(Integer.toString(selectedItem.id));
         }
     }    
 
